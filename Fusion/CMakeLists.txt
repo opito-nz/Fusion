@@ -1,7 +1,5 @@
-file(GLOB_RECURSE files "*.c")
+zephyr_library()
 
-add_library(Fusion ${files})
-
-if(UNIX AND NOT APPLE)
-    target_link_libraries(Fusion m) # link math library for Linux
-endif()
+zephyr_library_sources_ifdef(CONFIG_FUSION_AHRS FusionAhrs.c)
+zephyr_library_sources_ifdef(CONFIG_FUSION_AHRS FusionCompass.c)
+zephyr_library_sources_ifdef(CONFIG_FUSION_AHRS FusionOffset.c)

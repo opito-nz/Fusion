@@ -1,0 +1,6 @@
+menuconfig FUSION_AHRS
+    bool "Fusion AHRS implementation (by x-io Tech.)"
+    help
+      Enables an AHRS sensor-fusion library based on the original Madgwick
+      paper. This algorithm requires a gyroscope and accelerometer, and
+      optionally accepts a magnetometer.
